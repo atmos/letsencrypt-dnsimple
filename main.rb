@@ -95,3 +95,6 @@ File.write("#{filename_base}-key.pem", certificate.request.private_key.to_pem)
 File.write("#{filename_base}-cert.pem", certificate.to_pem)
 File.write("#{filename_base}-chain.pem", certificate.chain_to_pem)
 File.write("#{filename_base}-fullchain.pem", certificate.fullchain_to_pem)
+
+puts "To update your heroku certs run the following"
+puts "heroku certs:update #{filename_base}-fullchain.pem #{filename_base}-key.pem"
